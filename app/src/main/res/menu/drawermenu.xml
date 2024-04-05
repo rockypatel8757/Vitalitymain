@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/first1"
+        android:title="Report"
+        android:icon="@drawable/report_ic"/>
+    <item
+        android:id="@+id/second2"
+        android:title="Home"
+        android:icon="@drawable/home_ic"/>
+    <item
+        android:id="@+id/third3"
+        android:title="Balanced Diet"
+        android:icon="@drawable/diet_ic"/>
+    <item
+        android:id="@+id/forth4"
+        android:title="PCOS"
+        android:icon="@drawable/pcos_ic"/>
+    <item
+        android:id="@+id/fifth5"
+        android:title="PCOD"
+        android:icon="@drawable/pcod_ic"/>
+    <item
+        android:id="@+id/sixth6"
+        android:title="Emergency"
+        android:icon="@drawable/emergency_ic"/>
+    <item
+        android:id="@+id/seventh7"
+        android:title="Log Out"
+        android:icon="@drawable/logout_ic"/>
+    <item
+        android:id="@+id/eighth8"
+        android:title="More"
+        android:icon="@drawable/more"/>
+
+</menu>

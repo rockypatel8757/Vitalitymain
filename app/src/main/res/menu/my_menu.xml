@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/balenceddiet"
+        android:title="Diet Plan"
+         app:showAsAction="always"
+        android:icon="@drawable/diet_ic"/>
+    <item
+        android:id="@+id/report"
+        android:title="Report"
+        android:icon="@drawable/report_ic"
+        app:showAsAction="always"/>
+    <item
+        android:title="Home"
+        android:icon="@drawable/home_ic"
+        android:id="@+id/home"
+        app:showAsAction="always"/>
+    <item
+        android:title="Workout"
+        android:id="@+id/workout"
+        android:icon="@drawable/workout_ic"
+        app:showAsAction="always"/>
+    <item
+        android:id="@+id/more"
+        android:title="More"
+        android:icon="@drawable/more"
+        app:showAsAction="always"/>
+
+</menu>
