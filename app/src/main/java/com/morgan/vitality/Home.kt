@@ -8,6 +8,9 @@ import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.GravityCompat
 import androidx.fragment.app.Fragment
+import com.google.android.gms.auth.api.signin.GoogleSignIn
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.morgan.vitality.databinding.ActivityHomeBinding
 import com.morgan.vitality.fragments.BalancedDiet
 import com.morgan.vitality.fragments.HomeFrag
@@ -19,6 +22,7 @@ import com.morgan.vitality.fragments.WorkoutFrag
 class Home : AppCompatActivity() {
     private lateinit var b:ActivityHomeBinding
     private lateinit var appbar: ActionBar
+    private lateinit var googleSignInClient : GoogleSignInClient
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         b= ActivityHomeBinding.inflate(layoutInflater)
@@ -74,6 +78,18 @@ class Home : AppCompatActivity() {
                 startActivity(icall)
             }else if (it.itemId==R.id.seventh7){
 //LOGOUT
+                val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+                    .requestIdToken(getString(R.string.default_web_client_id))
+                    .requestEmail()
+                    .build()
+                googleSignInClient= GoogleSignIn.getClient(this,gso)
+                googleSignInClient.signOut()
+                val preferences= getSharedPreferences("auth", MODE_PRIVATE)
+                val editor= preferences.edit()
+                editor.putBoolean("authBoolean",false)
+                editor.apply()
+                startActivity(Intent(this,LogIn::class.java))
+                finish()
 
             }else if (it.itemId==R.id.eighth8){
                 fragView(MoreFrag())
@@ -96,7 +112,7 @@ class Home : AppCompatActivity() {
         b.bnbar.setOnNavigationItemSelectedListener {
             val id = it.itemId
             if (id==R.id.home){
-                fragView(HomeFrag())
+                startActivity(Intent(this,SymptomTracker::class.java))
             }else if (id==R.id.balenceddiet){
                 fragView(BalancedDiet())
             }else if (id==R.id.report){
