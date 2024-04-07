@@ -1,5 +1,5 @@
 Our App:
-https://github.com/rockypatel8757/Vitalitymain/blob/master/app/release/app-release.apk
+https://drive.google.com/file/d/1aaAGe2y1IRjhp6wS0gDpU88Y-4VkzEK5/view?usp=sharing
 
 
 
